@@ -5,7 +5,7 @@ Flask app to display even, odd and prime numbers
 # Alternative approach
 
 Another approach would be to define a function for each method
-'''python
+```python
 @app.route('/<int:number>')
 def print_numbers(number):
 ...
@@ -21,7 +21,7 @@ def print_odd(number):
 @app.route('/<int:number>/prime')
 def print_primes(number):
 ...
-'''
+```
 
 **Pros**
 
