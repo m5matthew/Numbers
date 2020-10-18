@@ -27,6 +27,7 @@ def print_primes(number):
 
 - Easier to see which endpoints are defined
 - Easier to unit test
-  **Cons**
+
+**Cons**
 - Repetitive
 - Code is cluttered
