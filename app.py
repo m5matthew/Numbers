@@ -1,28 +1,22 @@
 from flask import Flask
+from numberlib import is_odd, is_even, is_prime
 app = Flask(__name__)
 
 
+@app.route('/<int:number>')
 @app.route('/<int:number>/<arg>')
-def numbers(number, arg):
+def numbers(number, arg=None):
 
-    def is_prime(x):
-
-        # negative numbers and {0,1} are not prime numbers
-        if x < 2:
-            return False
-
-        for i in range(2, x):
-            if x % i == 0:
-                return False
-        return True
+    out = list(range(1, number+1))
 
     if arg == "odd":
-        return ','.join([str(x) for x in range(1, number+1) if x % 2 == 1])
+        out = filter(is_odd, out)
 
     elif arg == "even":
-        return ','.join([str(x) for x in range(1, number+1) if x % 2 == 0])
+        out = filter(is_even, out)
 
     elif arg == "prime":
-        return ','.join([str(x) for x in range(1, number+1) if is_prime(x)])
+        out = filter(is_prime, out)
 
-    return f"Argument {arg} is not supported. Please select from odd, even, or prime"
+    # Return sequence of numbers joined with commas
+    return ','.join([str(x) for x in out])
