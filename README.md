@@ -14,7 +14,7 @@ docker run -p 5000:5000 numbers
 # Alternative approach
 
 Another approach would be to define a function for each method
-'''Python3
+```python
 @app.route('/<int:number>')
 def print_numbers(number):
 ...
@@ -30,12 +30,13 @@ def print_odd(number):
 @app.route('/<int:number>/prime')
 def print_primes(number):
 ...
-'''
+```
 
 **Pros**
 
 - Easier to see which endpoints are defined
 - Easier to unit test
-  **Cons**
+
+**Cons**
 - Repetitive
 - Code is cluttered
