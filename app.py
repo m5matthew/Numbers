@@ -19,3 +19,7 @@ def print_numbers(number, arg=None):
 
     # Return sequence of numbers joined with commas
     return ','.join([str(x) for x in out])
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')

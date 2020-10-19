@@ -2,6 +2,15 @@
 
 Flask app to display even, odd and prime numbers
 
+# Running the App
+
+I have written a dockerfile to run the app in development mode.
+
+```bash
+docker build -t numbers:latest .
+docker run -p 5000:5000 numbers
+```
+
 # Alternative approach
 
 Another approach would be to define a function for each method
